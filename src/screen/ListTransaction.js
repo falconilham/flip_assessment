@@ -56,16 +56,20 @@ export default function ListTransaction(){
     let [isHover, setIsHover] = useState()
     
     useEffect(() => {
-        listData.length < 1 && setIsLoading(true) && axios.get(API).then((res) => {
-            let data =  Object.values(res.data).sort((a,b) => compareString(a.beneficiary_name.toLowerCase(), b.beneficiary_name.toLowerCase()))
-            dispatch({
-                type: 'GET_DATA',
-                payload: data
+        if(listData.length < 1){
+            setIsLoading(true)
+            axios.get(API).then((res) => {
+                let data =  Object.values(res.data).sort((a,b) => compareString(a.beneficiary_name.toLowerCase(), b.beneficiary_name.toLowerCase()))
+                console.log(data)
+                dispatch({
+                    type: 'GET_DATA',
+                    payload: data
+                })
+                setIsLoading(false)
             })
-            setIsLoading(false)
-        })
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[dispatch])
+    },[])
 
     let sorting = () => {
         let dataHandler = [...listData]
