@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {View, Text, Select, Option, TextInput, BoxStatus} from '../component'
-import {ArrowRightOutlined} from '@ant-design/icons'
+import {ArrowRightOutlined, LoadingOutlined} from '@ant-design/icons'
 import {styles, COLOR} from '../Style'
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -60,7 +60,6 @@ export default function ListTransaction(){
             setIsLoading(true)
             axios.get(API).then((res) => {
                 let data =  Object.values(res.data).sort((a,b) => compareString(a.beneficiary_name.toLowerCase(), b.beneficiary_name.toLowerCase()))
-                console.log(data)
                 dispatch({
                     type: 'GET_DATA',
                     payload: data
@@ -132,7 +131,7 @@ export default function ListTransaction(){
                     </Select>
                 </View>
                 <View style={styles.containerBoxItem}>
-                    {isLoading ? <Text>...Loading</Text> : renderList()}
+                    {isLoading ? <LoadingOutlined style={{alignSelf: 'center', justifySelf: 'center', fontSize: 50}}/> : renderList()}
                 </View>
             </View>
         </View>
