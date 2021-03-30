@@ -58,7 +58,11 @@ export default function ListTransaction(){
     useEffect(() => {
         if(listData.length < 1){
             setIsLoading(true)
-            axios.get(API).then((res) => {
+            axios.get(API,{
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            }).then((res) => {
                 let data =  Object.values(res.data).sort((a,b) => compareString(a.beneficiary_name.toLowerCase(), b.beneficiary_name.toLowerCase()))
                 dispatch({
                     type: 'GET_DATA',
