@@ -34,7 +34,9 @@ const styles = {
     },
     containerBoxItem:{
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     boxItem:{
         backgroundColor: 'white',
@@ -53,16 +55,17 @@ const styles = {
         fontSize: 20,
         fontWeight: 'bold',
         backgroundColor: 'white',
-        padding: 10,
+        padding: 20,
         justifyContent: 'space-between',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 10
     },
     boxTextBank:{
         display: 'flex',
-        width: 150,
-        
+        marginBottom: 10,
+        marginRight: 10
     },
     containerInput:{
         display: 'grid',
@@ -70,12 +73,51 @@ const styles = {
         marginBottom: 20,
         height: 35
     },
+    textBox:{
+        marginBottom:10
+    },
     inputText:{
         boxSizing: 'border-box',
         border: '2px solid #ccc',
         borderRadius: 4,
         fontSize: 16,
         padding: '12px 20px 12px 20px'
+    },
+    itemBetweenText:{
+        marginRight : 10,
+        marginLeft: 10
+    },
+    detailTransaction:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        backgroundColor: 'white',
+        padding: 20,
+        marginBottom: 10,
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    itemDetailTransaction:{
+        display: 'grid', 
+        gridRowGap: 5,
+        marginBottom: 20
+    },
+    iconInboxTransaction:{
+        marginRight: 20
+    },
+    buttonBackDetail:{
+        borderStyle: 'solid',
+        borderRadius: 10,
+        backgroundColor: 'white',
+        width: 100,
+        padding: 10,
+        borderColor: COLOR.ORANGE,
+        color: COLOR.ORANGE
+    },
+    defaultButton:{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer'
     }
 }
 

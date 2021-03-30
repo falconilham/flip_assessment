@@ -5,9 +5,20 @@ import {COLOR} from '../Style'
 
 export default function BoxStatus({status, ...props}){
     let statusColor = status !== "SUCCESS" ? COLOR.ORANGE : COLOR.GREEN
+    let statusStyle = status !== "SUCCESS" ? {
+        ...styles.BoxStatus,
+        backgroundColor: 'white',
+        color: 'black',
+        borderStyle: 'solid',
+        borderColor: statusColor
+    }: {
+        ...styles.BoxStatus,
+        backgroundColor: statusColor
+    }
+    let statusName = status !== "SUCCESS" ? "Pengecekan" : "Berhasil"
     return(
-        <View style={{...styles.BoxStatus, backgroundColor:statusColor}} {...props}>
-           <Text style={styles.textStatus}>{status}</Text>
+        <View style={statusStyle} {...props}>
+           <Text style={styles.textStatus}>{statusName}</Text>
         </View>
     )
 }
