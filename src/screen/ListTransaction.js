@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom'
 import {capitalizeString, compareString, toCurrency, convertDate} from '../helper'
 import axios from 'axios'
 
-const API = process.env.REACT_APP_API
+const API = process.env.NODE_ENV === "development" ? process.env.REACT_APP_API : process.env.REACT_APP_API_PRODUCTION
 
 const BoxItem = ({id, amount, status, sender_bank, beneficiary_bank, completed_at, beneficiary_name, history, isHover}) => {
     let checkStatus = status !== "SUCCESS" ? {boxShadow: `-4px 0px ${COLOR.ORANGE}`} : {boxShadow: `-4px 0px ${COLOR.GREEN}`}
