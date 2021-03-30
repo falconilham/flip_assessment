@@ -35,7 +35,6 @@ const styles = {
     containerBoxItem:{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center'
     },
     boxItem:{

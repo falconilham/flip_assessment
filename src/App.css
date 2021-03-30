@@ -1,5 +1,8 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+
 .App {
   text-align: center;
+  font-family: 'Lato';
 }
 
 .App-logo {
